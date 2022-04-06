@@ -31,6 +31,7 @@ export class SpotService {
         },
       });
     }
+    if (!spots) throw new ForbiddenException('No spots found');
     return { spots };
   }
 
@@ -46,7 +47,7 @@ export class SpotService {
         status: SPOT_STATUS.EMPTY,
       },
     });
-    if (!spot) throw new ForbiddenException('No slots found');
+    if (!spot) throw new ForbiddenException('No spots found');
 
     const updated_spot = await this.prisma.spot.update({
       where: {
