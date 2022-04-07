@@ -2,6 +2,7 @@
 A parking garage API implimentation using [NestJS](https://github.com/nestjs/nest) and [Prisma](https://www.prisma.io/)
 
 
+## Table of Contents
 - [Installation and First Steps](#installation-and-first-steps)
 - [Running the app](#running-the-app)
 - [Testing the app](#testing)
