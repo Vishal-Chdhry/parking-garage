@@ -1,5 +1,10 @@
 ## Description
 A parking garage API implimentation using [NestJS](https://github.com/nestjs/nest) and [Prisma](https://www.prisma.io/)
+
+
+- [Installation and First Steps](#installation-and-first-steps)
+- [Running the app](#running-the-app)
+- [Testing the app](#testing)
 ## Installation and First Steps
 
 ### Note: You will need docker to run this application
@@ -31,7 +36,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+## Testing
 
 ```bash
 # unit tests
