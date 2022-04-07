@@ -26,7 +26,6 @@ model Garage {
   zipcode     String
   rate_reg    Decimal
   rate_large  Decimal
-  rate_medium Decimal
   rate_small  Decimal
   Spot        Spot[]
   Reservation Reservation[]

@@ -1,8 +1,4 @@
-import {
-  ExecutionContext,
-  ForbiddenException,
-  Injectable,
-} from '@nestjs/common';
+import { ForbiddenException, Injectable } from '@nestjs/common';
 import { Spot, SPOT_STATUS, VEHICLE_TYPE } from '@prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { reserverSpotDto } from './dto';
@@ -10,7 +6,7 @@ import { freeSpotDto } from './dto/free-spot.dto';
 
 @Injectable()
 export class SpotService {
-  constructor(private prisma: PrismaService, private ctx: ExecutionContext) {}
+  constructor(private prisma: PrismaService) {}
 
   async freespots({ garage_id, vehicle_type }: freeSpotDto) {
     let spots: Spot[];
