@@ -43,6 +43,7 @@ export class PaymentService {
         id: reservation.spot_id,
       },
       data: {
+        reservation_end: new Date(),
         status: SPOT_STATUS.EMPTY,
       },
     });

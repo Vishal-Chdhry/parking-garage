@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "spots" ADD COLUMN     "reservation_end" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP;

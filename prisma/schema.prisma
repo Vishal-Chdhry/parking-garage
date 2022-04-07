@@ -34,12 +34,13 @@ model Garage {
 }
 
 model Spot {
-  id           Int           @id @default(autoincrement())
-  vehicle_type VEHICLE_TYPE  @default(LARGE)
-  status       SPOT_STATUS   @default(EMPTY)
-  garage_id    Int
-  garage       Garage        @relation(fields: [garage_id], references: [id])
-  Reservation  Reservation[]
+  id              Int           @id @default(autoincrement())
+  vehicle_type    VEHICLE_TYPE  @default(LARGE)
+  status          SPOT_STATUS   @default(EMPTY)
+  reservation_end DateTime      @default(now())
+  garage_id       Int
+  garage          Garage        @relation(fields: [garage_id], references: [id])
+  Reservation     Reservation[]
 
   @@map("spots")
 }

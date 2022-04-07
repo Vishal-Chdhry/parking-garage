@@ -9,6 +9,18 @@ export class SpotService {
   constructor(private prisma: PrismaService) {}
 
   async freespots({ garage_id, vehicle_type }: freeSpotDto) {
+    await this.prisma.spot.updateMany({
+      where: {
+        garage_id,
+        OR: [{ status: SPOT_STATUS.BOOKED }, { status: SPOT_STATUS.RESERVED }],
+        reservation_end: {
+          lte: new Date(),
+        },
+      },
+      data: {
+        status: SPOT_STATUS.EMPTY,
+      },
+    });
     let spots: Spot[];
     if (vehicle_type === VEHICLE_TYPE.LARGE) {
       spots = await this.prisma.spot.findMany({
@@ -51,6 +63,7 @@ export class SpotService {
       },
       data: {
         status: SPOT_STATUS.RESERVED,
+        reservation_end: end_time,
       },
     });
     const reservation = await this.prisma.reservation.create({
