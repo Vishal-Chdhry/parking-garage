@@ -3,12 +3,14 @@ A parking garage API implimentation using [NestJS](https://github.com/nestjs/nes
 
 
 ## Table of Contents
-- [Installation and First Steps](#installation-and-first-steps)
+- [Installation and First Steps](#first-steps)
 - [Running the app](#running-the-app)
 - [Testing the app](#testing)
-## Installation and First Steps
+## Installation 
 
-### Note: You will need docker to run this application
+### First Steps
+
+#### Note: You will need docker to run this application
 #### Clone the repository
 ```bash
 git clone https://github.com/Vishal-Chdhry/parking-garage.git
@@ -24,7 +26,7 @@ npm install
 docker compose up dev-db -d
 ```
 
-## Running the app
+### Running the app
 
 ```bash
 # development
