@@ -3,9 +3,10 @@ A parking garage API implimentation using [NestJS](https://github.com/nestjs/nes
 
 
 ## Table of Contents
-- [Installation and First Steps](#first-steps)
-- [Running the app](#running-the-app)
-- [Testing the app](#testing)
+1. [Installation](#installation)
+   * [Installation and First Steps](#first-steps)
+   * [Running the app](#running-the-app)
+   * [Testing the app](#testing)
 ## Installation 
 
 ### First Steps
