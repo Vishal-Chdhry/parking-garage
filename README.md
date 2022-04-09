@@ -33,7 +33,7 @@ A parking garage API implimentation using [NestJS](https://github.com/nestjs/nes
 
 ### First Steps
 
-Note: You will need docker to run this application
+***Note:** You will need docker to run this application*
 
 Clone the repository
 ```bash
@@ -90,10 +90,10 @@ We are going to have a mobile or web view connected to the backend server, which
 Since, we will be reading more than writing, its a good choice to have some read replicas to enable faster reads. The replicas will be connected to a load balancer as well to maintain proper usage.
 
 **Considerations:** 
-- *A garage is likely to have atmost 200x10 spots, and there are not a lot of garages, so it isn't a necessity for the garage to be a distributed system*
+- A garage is likely to have atmost 200x10 spots, and there are not a lot of garages, so *it isn't a necessity for the garage to be a distributed system*
 
-- *In this case we will have to maintain strong consistency instead of eventual consistency to avoid race condition and wrong data on replicas. Since the number of booking will be much less than reads, the latency in booking won't be much of an issue.*
-- *We can also readlock the replicas based on location while writing, so we will also shard the database based on location*
+- In this case we will have to maintain *strong consistency* instead of eventual consistency to *avoid race condition* and wrong data on replicas. Since the number of booking will be much less than reads, *the latency in booking won't be much of an issue.*
+- We can also readlock the replicas based on location while writing, so we will also *shard the database based on location*
 ## Endpoints
 
 ### POST `auth/create_account`
