@@ -9,14 +9,22 @@ A parking garage API implimentation using [NestJS](https://github.com/nestjs/nes
   - [First Steps](#first-steps)
   - [Running the app](#running-the-app)
   - [Testing](#testing)
+- [Proposed Design](#proposed-design)
 - [Endpoints](#endpoints)
+  - [POST `auth/create_account`](#post-authcreate_account)
+  - [POST `auth/login`](#post-authlogin)
+  - [GET `user/me`](#get-userme)
+  - [PATCH `user/me`](#patch-userme)
+  - [POST `spot/reserve`](#post-spotreserve)
+  - [GET `spot/freespots`](#get-spotfreespots)
+  - [POST `payment/calculate_payment`](#post-paymentcalculate_payment)
+  - [POST `payment/cancel`](#post-paymentcancel)
 - [Schema](#schema)
   - [Reservations](#reservations)
   - [Garage](#garage)
   - [Spot](#spot)
   - [Users](#users)
   - [Vehicle](#vehicle)
-- [Proposed Architecture](#proposed-architecture)
 ## Installation 
 
 ### First Steps
@@ -64,8 +72,39 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Proposed Design
 ## Endpoints
 
+### POST `auth/create_account`
+Creates a new user <br>
+**Params**: [User](#users) <br>
+**Returns**: JWT Token
+
+### POST `auth/login`
+Logs in with the user credential <br>
+**Params**: email, password <br>
+**Returns**: JWT Auth Token
+### GET `user/me` 
+Returns with the info of the logged-in user
+
+### PATCH `user/me`
+Updates the logged-in user's info
+
+### POST `spot/reserve`
+**Params:** garage_id, vehicle_type, end_time <br>
+**Returns:** [Reservation](#reservations)
+
+### GET `spot/freespots`
+**Params:** garage_id, vehicle_type <br>
+**Returns:** [Spot](#spot) Array
+
+### POST `payment/calculate_payment`
+**Params:**: reservation_id <br>
+**Returns:**: rate
+
+### POST `payment/cancel`
+**Params:** reservation_id <br>
+**Returns:** [Spot](#spot)
 ## Schema
 
 ### Reservations
@@ -118,5 +157,4 @@ id         |     Primary Key
   user      |   User      
   license    |  String
   vehicle_type | VEHICLE_TYPE 
-## Proposed Architecture
 
